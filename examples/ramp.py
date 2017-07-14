@@ -80,20 +80,17 @@ class MotorRampExample:
     def _ramp_motors(self):
         thrust_mult = 1
         thrust_step = 500
-        thrust = 10000
+        thrust = 800
         pitch = 0
         roll = 0
         yawrate = 0
 
         # Unlock startup thrust protection
         self._cf.commander.send_setpoint(0, 0, 0, 0)
-
-        while thrust >= 20000:
+        the_time = time.time() + 100
+        while time.time()<the_time:
             self._cf.commander.send_setpoint(roll, pitch, yawrate, thrust)
             time.sleep(0.1)
-            if thrust >= 25000:
-                thrust_mult = -1
-            thrust += thrust_step * thrust_mult
         self._cf.commander.send_setpoint(0, 0, 0, 0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
