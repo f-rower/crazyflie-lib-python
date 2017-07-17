@@ -1,0 +1,1 @@
+{'stabilizer.roll': -59.283748626708984, 'stabilizer.yaw': -5.0179338455200195, 'stabilizer.thrust': 0.0, 'stabilizer.pitch': -8.476983070373535}

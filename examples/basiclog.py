@@ -30,6 +30,7 @@ and prints it to the console. After 10s the application disconnects and exits.
 import logging
 import time
 from threading import Timer
+#import matplotlib.pyplot as plt  THIS IS TO BE USED FOR PLOTTING ON THE GO.
 
 import cflib.crtp  # noqa
 from cflib.crazyflie import Crazyflie
@@ -37,7 +38,9 @@ from cflib.crazyflie.log import LogConfig
 
 # Only output errors from the logging framework
 logging.basicConfig(level=logging.ERROR)
-
+#plt.plot([1,2,3,4])
+#plt.ylabel('some numbers')
+#plt.show()
 
 class LoggingExample:
     """
@@ -71,11 +74,12 @@ class LoggingExample:
         print('Connected to %s' % link_uri)
 
         # The definition of the logconfig can be made before connecting
-        self._lg_stab = LogConfig(name='Stabilizer', period_in_ms=10)
+        self._lg_stab = LogConfig(name='Stabilizer', period_in_ms=1000) #self.lg_stab is a LogConfig object. See log.py for details.
         self._lg_stab.add_variable('stabilizer.roll', 'float')
         self._lg_stab.add_variable('stabilizer.pitch', 'float')
         self._lg_stab.add_variable('stabilizer.yaw', 'float')
-
+        self._lg_stab.add_variable('stabilizer.thrust','float')
+        print(time.strftime("%d/%m/%Y"))
         # Adding the configuration cannot be done until a Crazyflie is
         # connected, since we need to check that the variables we
         # would like to log are in the TOC.
@@ -93,7 +97,7 @@ class LoggingExample:
         except AttributeError:
             print('Could not add Stabilizer log config, bad configuration.')
 
-        # Start a timer to disconnect in 10s
+        # Start a timer to disconnect in 5s
         t = Timer(5, self._cf.close_link)
         t.start()
 
@@ -102,9 +106,11 @@ class LoggingExample:
         print('Error when logging %s: %s' % (logconf.name, msg))
 
     def _stab_log_data(self, timestamp, data, logconf):
-        """Callback froma the log API when data arrives"""
+        """Callback from the log API when data arrives"""
         print('[%d][%s]: %s' % (timestamp, logconf.name, data))
-
+        f = open("fileread.txt", 'w+')
+        f.write("%s\n" % data)
+        f.close()
     def _connection_failed(self, link_uri, msg):
         """Callback when connection initial connection fails (i.e no Crazyflie
         at the speficied address)"""
