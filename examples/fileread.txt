@@ -3,3 +3,11 @@
 {'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.28997039794922, 'stabilizer.pitch': -8.194087982177734, 'stabilizer.yaw': 4.646407604217529}
 {'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.29602813720703, 'stabilizer.pitch': -8.208049774169922, 'stabilizer.yaw': 4.649837970733643}
 {'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.294837951660156, 'stabilizer.pitch': -8.203902244567871, 'stabilizer.yaw': 4.640047550201416}
+{'stabilizer.pitch': -8.126852989196777, 'stabilizer.roll': -59.25527572631836, 'stabilizer.yaw': 15.967395782470703, 'stabilizer.thrust': 0.0}
+{'stabilizer.pitch': -8.131806373596191, 'stabilizer.roll': -59.255897521972656, 'stabilizer.yaw': 15.96696949005127, 'stabilizer.thrust': 0.0}
+{'stabilizer.pitch': -8.13415813446045, 'stabilizer.roll': -59.258575439453125, 'stabilizer.yaw': 15.969560623168945, 'stabilizer.thrust': 0.0}
+{'stabilizer.pitch': -8.133151054382324, 'stabilizer.roll': -59.27033233642578, 'stabilizer.yaw': 15.968398094177246, 'stabilizer.thrust': 0.0}
+{'stabilizer.pitch': -8.116131782531738, 'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.25044631958008, 'stabilizer.yaw': 15.852137565612793}
+{'stabilizer.pitch': -8.124329566955566, 'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.25699234008789, 'stabilizer.yaw': 15.856119155883789}
+{'stabilizer.pitch': -8.11864948272705, 'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.26720428466797, 'stabilizer.yaw': 15.847328186035156}
+{'stabilizer.pitch': -8.118329048156738, 'stabilizer.thrust': 0.0, 'stabilizer.roll': -59.298500061035156, 'stabilizer.yaw': 15.829570770263672}

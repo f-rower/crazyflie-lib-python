@@ -105,12 +105,13 @@ class LoggingExample:
         """Callback from the log API when an error occurs"""
         print('Error when logging %s: %s' % (logconf.name, msg))
 
-    def _stab_log_data(self, timestamp, data, logconf):
+    def _stab_log_data(self, timestamp, data, logconf): #logconf, timestamp and data come from the imported LogConfig class.
         """Callback from the log API when data arrives"""
         print('[%d][%s]: %s' % (timestamp, logconf.name, data))
         f = open("fileread.txt", 'a+')
         f.write("%s\n" % data)
         f.close()
+        print(data['stabilizer.roll']) #data is a DICTIONARY with entries that can be accessed in the way shown in this line.
     def _connection_failed(self, link_uri, msg):
         """Callback when connection initial connection fails (i.e no Crazyflie
         at the speficied address)"""
