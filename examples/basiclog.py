@@ -86,7 +86,7 @@ class LoggingExample:
         try:
             self._cf.log.add_config(self._lg_stab)
             # This callback will receive the data
-            self._lg_stab.data_received_cb.add_callback(self._stab_log_data)
+            self._lg_stab.data_received_cb.add_callback(self._stab_log_data)#this says what to do when a new set of data is received
             # This callback will be called on errors
             self._lg_stab.error_cb.add_callback(self._stab_log_error)
             # Start the logging
@@ -108,7 +108,7 @@ class LoggingExample:
     def _stab_log_data(self, timestamp, data, logconf):
         """Callback from the log API when data arrives"""
         print('[%d][%s]: %s' % (timestamp, logconf.name, data))
-        f = open("fileread.txt", 'w+')
+        f = open("fileread.txt", 'a+')
         f.write("%s\n" % data)
         f.close()
     def _connection_failed(self, link_uri, msg):
